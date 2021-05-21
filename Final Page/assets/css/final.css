@@ -1,0 +1,9 @@
+.card-panel {
+  opacity: 80%;
+  background-color: aqua;
+}
+
+.cardTitle {
+  font-size: 50px;
+  font-weight: bold;
+}
