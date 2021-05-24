@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <form>
+    <p>
+      <label for="search">search</label>
+      <input type="text" name="search" id="search">
+    </p>
+    <p>
+      <button id="game">Search Game</button>
+    </p>
+  </form>
+  <div id="steamId"></div>
+  <div id="playerCount"></div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script>
+
+    document.getElementById('game').addEventListener('click' , event => {
+      event.preventDefault()
+
+      axios.get(`https://www.cheapshark.com/api/1.0/games?title=${document.getElementById('search').value}`)
+      .then(res => {
+        let steamId = res.data
+        console.log(steamId)
+        // for ( var i = 0; i < 6; i++){
+        // }
+        // document.getElementById('steamId').innerHTML = `
+        //   <h1>Steam App ID: ${steamId[0].steamAppID}</h1>
+        //   `
+         
+
+
+        //I CANT GET THIS FOR LOOP TO WORK T____T
+        for(let i = 0; i < 5; i++){}
+
+        axios.get(`https://desolate-thicket-86814.herokuapp.com/games/${steamId[0].steamAppID}`)
+          .then(resp => {
+            let playerCount = resp.data
+            console.log(playerCount)
+
+
+            
+            document.getElementById('steamId').innerHTML = `
+          <h1>Steam App ID: ${steamId[0].steamAppID}</h1>
+          `
+            document.getElementById('playerCount').innerHTML = `
+          <h1>Player Count: ${playerCount.response.player_count}</h1>
+          `
+          
+          })
+        
+          .catch(err => console.error(err))
+        
+      })
+    
+      .catch(err => console.error(err))
+    })
+  
+  </script>
+</body>
+
+</html>
