@@ -14,10 +14,33 @@ axios.get('https://cors-proxy-j.herokuapp.com/', {
 })
   .then( res => {
     
-    let videoGames = res
+    let videoGames = res.data.results
     console.log(videoGames)
-    document.getElementById('videoGames').innerHTML = ''
-   
+    // document.getElementById('videoGames').innerHTML = ''
+   videoGames.forEach(videoGame =>{
+     let gameElem = document.createElement('div')
+     gameElem.className = 'col-s3'
+     gameElem.innerHTML = `
+     <div class="row">
+    <div class="col s12 m7">
+      <div class="card">
+        <div class="card-image">
+          <img src="${videoGame.background_image}" alt = "${videoGame.name}">
+          <span class="card-title">${videoGame.slug}</span>
+        </div>
+        <div class="card-content">
+          <p>${videoGame.esrb_rating}</p>
+          <p>${videoGame.tags}
+        </div>
+        <div class="card-action">
+          <a href="#">link to main search page</a>
+        </div>
+      </div>
+    </div>
+  </div>`
+  document.getElementById('videoGames').append(gameElem)
+
+   })
 
   })
   .catch(err => console.error(err))
