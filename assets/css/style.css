@@ -1,0 +1,32 @@
+#kanyeQuote {
+  margin-left: 25%;
+  border-radius: 18px;
+  background: rgb(0, 162, 255);
+  padding: 20px;
+  width: 50%;
+  /*height: 30%;
+  */color: rgb(0, 0, 0);
+  font-weight: 500;
+  text-align: center;
+  align-content: center;
+}
+
+#kanyeGif {
+  margin-left: 28%;
+  align-items: center;
+  flex: content;
+  align-content: center;
+}
+
+body {
+  background-color: grey;
+}
+
+#nav-mobile {
+  background-color: black;
+  opacity: 70%;
+}
+
+.nav-wrapper {
+  background-color: rgb(0, 0, 0);
+}

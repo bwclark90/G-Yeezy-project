@@ -17,3 +17,8 @@ axios.get(`https://api.giphy.com/v1/gifs/search?api_key=j6yOF05YP8AGwMifwqeDBZ1R
     document.getElementById('kanyeGif').innerHTML = `<img src="${gifs[random].images.original.url}">`
   })
   .catch(err => console.error(err))
+
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems);
+});
