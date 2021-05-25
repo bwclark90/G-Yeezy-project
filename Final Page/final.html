@@ -15,28 +15,24 @@
 <body>
   <div class="row">
     <div class="col s12 m6">
-      <div class="card">
+      <div class="card hoverable">
         <div class="card-image" id="cardHead">
 
         </div>
         <div class="card-content">
           <p class="flow-text" id="gameDesc"></p>
         </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-        </div>
       </div>
     </div>
     <div class="col s12 m6">
-      <div class="card">
-        <div class="card-image">
-          <video class="materialboxed responsive-video" id="trailerBox" controls>
-          </video>
+      <div class="card hoverable">
+        <div class="card-image" id="trailerBox">
+
         </div>
         <div class="card-content">
           <h6>Developer:</h6>
           <p class="flow-text" id="Devs">
-            
+
           </p>
           <h6>Genres:</h6>
           <p class="flow-text" id="Genres">
@@ -44,13 +40,58 @@
           </p>
           <h6>Platforms: </h6>
           <p id="platforms">
-            
+
+          </p>
+          <h6>Tags: </h6>
+          <p id="tags">
+
           </p>
         </div>
-        <div class="card-action">
-          <a href="#">This is a link</a>
-        </div>
       </div>
+    </div>
+  </div>
+  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4 id="modalTitle"></h4>
+      <div class="row">
+        <div class="col s12 m6 xl3">
+          <div class="card hoverable" id="card-0">
+          </div>
+        </div>
+        <div class="col s12 m6 xl3">
+          <div class="card hoverable" id="card-1">
+          </div>
+        </div>
+        <div class="col s12 m6 xl3">
+          <div class="card hoverable" id="card-2">
+          </div>
+        </div>
+        <div class="col s12 m6 xl3">
+          <div class="card hoverable" id="card-3">
+          </div>
+        </div> 
+      </div>
+      <div class="row">
+        <div class="col s12 m6 xl3">
+          <div class="card hoverable" id="card-4">
+          </div>
+        </div>
+        <div class="col s12 m6 xl3">
+          <div class="card hoverable" id="card-5">
+          </div>
+        </div>
+        <div class="col s12 m6 xl3">
+          <div class="card hoverable" id="card-6">
+          </div>
+        </div>
+        <div class="col s12 m6 xl3">
+          <div class="card hoverable" id="card-7">
+          </div>
+        </div> 
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">X</a>
     </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
