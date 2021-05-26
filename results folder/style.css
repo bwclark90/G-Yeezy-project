@@ -1,3 +1,67 @@
-.card-content, .card-action {
+.col.s12.s4 {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+
+.body {
+  height: 100vh;
+}
+
+.card {
   background-color: black;
+  font-family: 'Odibee Sans', cursive;
+  border: 1px solid #eee;
+  box-shadow: 0 4px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 7px;
+}
+
+.card-content {
+  color: white;
+  height: 100px;
+}
+
+.card-action {
+  height: 100px;
+}
+
+.card-image {
+  height: auto;
+  width: 100%;
+}
+
+/* nav bar */
+
+#nav-mobile {
+  background-color: black;
+  opacity: 70%;
+}
+
+.nav-wrapper {
+  background-color: rgb(66, 66, 66);
+  flex-wrap: wrap width:100%;
+  position: absolute;
+  width: 100%;
+}
+
+.search input[type=text] {
+  padding: 6px;
+  border: none;
+  margin-top: 2px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
+.search {
+  float: right;
+  margin: 7px;
+  position: initial;
+  align-content: center;
+}
+
+.nav-wrapper .input-field input[type=search] {
+  height: initial;
+  padding-left: 4rem;
+  width: calc(100% - 4rem);
+  background: transparent;
 }

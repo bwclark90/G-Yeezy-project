@@ -7,29 +7,53 @@
   <title>Results</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-  <link rel="stylesheet2" href="./style.css">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="large material-icons" id="icon">videogame_asset</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li><a href="games.html">Games</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+  <li><a href="sass.html">Sass</a></li>
+  <li><a href="badges.html">Components</a></li>
+  <li><a href="collapsible.html">Javascript</a></li>
+  <li><a href="mobile.html">Mobile</a></li>
+</ul>
+
   <h1> </h1>
 <div class="container">
-  <div class ="row">
-    <form>
-      <div class="mb-3">
-        <label for="title" class="form-label">Video Games</label>
-        <input type="text" class="form-control" id="title">
-      </div>
-      <button id="searchGames" class="waves-effect waves-light btn-large">Search</button>
-      
-    </form>
+<div class="row">
+  <form>
+    <div class="mb-3">
+      <label for="title" class="form-label">Search a new game</label>
+      <input type="search" class="form-control" id="title">
     </div>
+    <a class="waves-effect waves-dark btn-large" id="searchGame" type="submit">Search</a>
+    
+  </form>
+</div>
+  
     <div class="row" id="videoGames"></div>
+      
+      
+    </div>
 
 
 
 
 
   </div>
-<div id="results" class="row"></div>
+
 
 </div>
 

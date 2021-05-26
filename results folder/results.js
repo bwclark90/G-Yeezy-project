@@ -1,6 +1,9 @@
-document.getElementById('searchGames').addEventListener('click', event => {
-  event.preventDefault()
+let finalPage = JSON.parse(localStorage.getItem('final')) || []
+let videoGames = []
 
+document.getElementById('searchGame').addEventListener('click', event => {
+  event.preventDefault()
+console.log('ping')
 
 
   axios.get('https://cors-proxy-j.herokuapp.com/', {
@@ -15,29 +18,33 @@ document.getElementById('searchGames').addEventListener('click', event => {
     .then(resp => {
       let videoGames = resp.data.results
       console.log(videoGames)
+
       videoGames.forEach(videoGame => {
         let gameElem = document.createElement('div')
-        gameElem.className = 'col-s3'
-        gameElem.innerHTML = ` <div class="row">
-        <div class="col s12 m7">
-        <div class="card">
+        gameElem.className = 'col-s12 m4'
+        gameElem.innerHTML = ` <div class="col m4">
+        <div class="card medium">
         <div class="card-image">
+        
           <img src="${videoGame.background_image}" alt = "${videoGame.slug}">
+          
           <span class="card-title">${videoGame.slug}</span>
         </div>
         <div class="card-content">
+        <p>${videoGame.slug}
           <p>Released: ${videoGame.released}</p>
           <p>Community Rating: ${videoGame.rating}/5</p>
         </div>
         <div class="card-action">
-          <a href="#">link to main search page</a>
+          <a href="#" class ="addFinal">link to main search page</a>
         </div>
-      </div>
-    </div>
-  </div>`
+        </div>
+  </div>
+  <br>`
         document.getElementById('videoGames').append(gameElem)
+        
       })
-
+      document.getElementById('title').value = ''
 
     })
     .catch(err => console.error)
