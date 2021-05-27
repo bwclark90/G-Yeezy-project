@@ -3,7 +3,7 @@ let videoGames = []
 
 document.getElementById('searchGame').addEventListener('click', event => {
   event.preventDefault()
-console.log('ping')
+  console.log('ping')
 
 
   axios.get('https://cors-proxy-j.herokuapp.com/', {
@@ -41,7 +41,7 @@ console.log('ping')
         </div>
         `
         document.getElementById('videoGames').append(gameElem)
-        
+
       })
       document.getElementById('title').value = ''
 
