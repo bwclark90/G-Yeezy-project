@@ -103,3 +103,22 @@ body {
   margin-bottom: 0;
   padding-bottom: 0;
 }
+
+/* footer */
+
+/* FOOTER STUFF */
+
+.page-footer {
+  height: 70px;
+  background-color: rgb(66, 66, 66);
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  text-indent: 97px;
+  line-height: 0px;
+}
+
+.container1 {
+  width: 90%;
+  max-width: 1920px;
+}
