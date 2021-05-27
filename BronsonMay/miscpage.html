@@ -121,6 +121,7 @@
   padding-left: 4rem;
   width: calc(100% - 4rem);
   background: transparent;
+  color: white;
 }
 
 
@@ -152,17 +153,40 @@ body {
 }
 
 
+@media only screen and (max-width: 1100px) {
+  #website {
+    font-size: 18px;
+  }
+  #searchBar {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #website {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  #website {
+    display: none;
+  }
+}
+
+#icon {
+  font-size: 50px;
+  margin-left: 20px;
+}
+
 #website {
   font-family: 'Rock Salt', cursive;
-  text-align: center;
-  position: absolute;
   top: 0;
   left: 0;
   z-index: 999;
-  width: 100%;
   padding-top: 0;
   padding-bottom: 30px;
-  margin-bottom: 0;
+  /* margin-bottom: 0; */
   padding-bottom: 0;
 }
 
@@ -175,8 +199,11 @@ body {
   <div class="navbar-fixed">
     <nav>
       <div class="nav-wrapper">
-        <a href="#!" class="large material-icons" id="icon">videogame_asset</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="../index.html" class="large material-icons" id="icon">videogame_asset</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <a href="../index.html" class="brand-logo center">
+        <h5 id="website">G-YEEZY GAME SEARCH</h5>
+      </a>
         <ul class="right hide-on-med-and-down">
           <li>
             <div id="searchBar">

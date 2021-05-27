@@ -19,10 +19,10 @@ ___Technologies used:___
 <li> Materialize for CSS</li>
 <li> Herouku CORS-proxy </li>
 <li> RAWG games API</li>
- <li>RAWG games API</li>
- <li>Cheapshark API</li>
+<li> Steam Web API</li>
+<li> Cheapshark API</li>
 <li> Kanye.rest API</li> 
-  <li>Giphy API </li>
+<li> Giphy API </li>
 </ul>
 
 ___Project Requirements:___

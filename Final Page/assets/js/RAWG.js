@@ -19,7 +19,7 @@ const searchBtn = (btnID) => {
 const loopModals = (dataproperty, tag) => {
   getID(tag).innerHTML = ""
   for (let t = 0; t < dataproperty.length; t++) {
-    getID(tag).innerHTML += `<a class="waves-effect waves-light btn modal-trigger" href="#modal1" data-name="${dataproperty[t].name}" data-search="${dataproperty[t].slug}">${dataproperty[t].name}</a>`
+    getID(tag).innerHTML += `<a class="waves-effect waves-light btn modal-trigger pink accent-4" href="#modal1" data-name="${dataproperty[t].name}" data-search="${dataproperty[t].slug}">${dataproperty[t].name}</a>`
   }
 }
 const loopDisplay = (dataproperty, tag) => {
@@ -147,8 +147,11 @@ const infoDump = (searchVal) => {
           loopDisplay(data.tags, 'tags')
           getID('Release').innerHTML = `${data.released}`
           getID('Rating').innerHTML = `${data.rating}/5`
+          if (data.esrb_rating===null) {
+            getID('ESRB').innerHTML = 'N/A'
+          } else {
           getID('ESRB').innerHTML = `${data.esrb_rating.name}`
-
+          }
           cheapsharkInfo(data.name)
           steamInfo(searchVal)
           getID('mainBlock').classList.remove('blockstart')
