@@ -28,10 +28,10 @@ console.log('ping')
         
           <img src="${videoGame.background_image}" alt = "${videoGame.slug}">
           
-          <span class="card-title">${videoGame.slug}</span>
+          <span class="card-title">${videoGame.name}</span>
         </div>
         <div class="card-content">
-        <p>${videoGame.slug}
+        <p>${videoGame.name}
           <p>Released: ${videoGame.released}</p>
           <p>Community Rating: ${videoGame.rating}/5</p>
         </div>
@@ -39,8 +39,7 @@ console.log('ping')
           <a href="#" class ="addFinal">link to main search page</a>
         </div>
         </div>
-  </div>
-  <br>`
+        `
         document.getElementById('videoGames').append(gameElem)
         
       })
