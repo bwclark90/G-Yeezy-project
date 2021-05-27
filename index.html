@@ -6,45 +6,71 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
   <link rel="stylesheet" href="assets/css/style.css" </head>
 
 <body>
   <nav>
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">Logo</a>
+      <a href="#!" class="large material-icons" id="icon">videogame_asset</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="sass.html">Sass</a></li>
-        <li><a href="badges.html">Components</a></li>
-        <li><a href="collapsible.html">Javascript</a></li>
-        <li><a href="mobile.html">Mobile</a></li>
+        <li>
+          <div id="searchBar">
+            <form class="input-field">
+              <input id="search" type="search" placeholder=" Search Games" required>
+              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+              <i class="material-icons">close</i>
+            </form>
+          </div>
+        </li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
   </nav>
-  
   <ul class="sidenav" id="mobile-demo">
     <li><a href="sass.html">Sass</a></li>
     <li><a href="badges.html">Components</a></li>
     <li><a href="collapsible.html">Javascript</a></li>
     <li><a href="mobile.html">Mobile</a></li>
+    <li>
+      <div id="mobile-search">
+        <form class="input-field">
+          <input id="mobileSearch" type="search" placeholder=" Search Games" required>
+          <label class="label-icon" for="search"><i class="mobile-search"></i></label>
+          <i class="material-icons">close</i>
+        </form>
+      </div>
   </ul>
 
 
-  <!-- <i class="large material-icons">videogame_asset</i> -->
-  <p id="kanyeQuote"></p>
+  <div class="row">
+    <div class="col s12 m4">
+      <!-- <p id="kanyeQuote"></p> -->
+    </div>
+    <div class="col s12 m4">
+      <p id="kanyeQuote"></p>
+    </div>
+    <div class="col s12 m4">
+      <!-- <p id="kanyeQuote"></p> -->
+    </div>
+    <div class="col s12">
+      <span id="kanyeGif"></span>
+    </div>
 
-  <div>
-    <p id="kanyeGif"></p>
-    <!-- <img class="materialboxed" width="650""> -->
-  </div>
-  <!-- <div id="yeezyQuote"></div> -->
+    <div class="ocean">
+      <div class="wave"></div>
+      <div class="wave"></div>
+    </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="assets/js/script.js"></script>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="assets/js/script.js"></script>
 
 </body>
 

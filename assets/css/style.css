@@ -1,21 +1,27 @@
 #kanyeQuote {
-  margin-left: 25%;
-  border-radius: 18px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 13px;
   background: rgb(0, 162, 255);
   padding: 20px;
-  width: 50%;
-  /*height: 30%;
-  */color: rgb(0, 0, 0);
+  width: 100%;
   font-weight: 500;
-  text-align: center;
-  align-content: center;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  -ms-border-radius: 13px;
+  -o-border-radius: 13px;
 }
 
-#kanyeGif {
-  margin-left: 28%;
-  align-items: center;
-  flex: content;
-  align-content: center;
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+  box-sizing: border-box;
+  border-style: ridge;
+  border-color: rgb(255, 254, 254);
 }
 
 body {
@@ -28,5 +34,83 @@ body {
 }
 
 .nav-wrapper {
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(66, 66, 66);
+  flex-wrap: wrap width:100%;
+  position: absolute;
+  width: 100%;
+}
+
+.search input[type=text] {
+  padding: 6px;
+  border: none;
+  margin-top: 2px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
+.search {
+  float: right;
+  margin: 7px;
+  position: initial;
+  align-content: center;
+}
+
+.nav-wrapper .input-field input[type=search] {
+  height: initial;
+  padding-left: 4rem;
+  width: calc(100% - 4rem);
+  background: transparent;
+}
+
+// best seen at 1500px or less
+html, body {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(ellipse at center, rgb(0, 0, 0) 0%, rgb(10, 145, 199) 35%, #630622 100%);
+  overflow: hidden;
+}
+
+.ocean {
+  height: 5%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #015871;
+}
+
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
 }
