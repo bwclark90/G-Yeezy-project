@@ -3,6 +3,9 @@
 .page-footer {
   height: 100px;
   background-color: rgb(66, 66, 66);
+  bottom: 0;
+  position: fixed;
+  width: 100%;
 }
 
 #copyright {
