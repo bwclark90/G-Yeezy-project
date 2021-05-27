@@ -18,7 +18,7 @@ document.getElementById('searchGame').addEventListener('click', event => {
     .then(resp => {
       let videoGames = resp.data.results
       console.log(videoGames)
-
+      document.getElementById('videoGames').innerHTML = ''
       videoGames.forEach(videoGame => {
         let gameElem = document.createElement('div')
         gameElem.className = 'col-s12 m4'
@@ -41,10 +41,10 @@ document.getElementById('searchGame').addEventListener('click', event => {
         </div>
         `
         document.getElementById('videoGames').append(gameElem)
-
+        
       })
       document.getElementById('title').value = ''
-
+      
     })
     .catch(err => console.error)
 })
