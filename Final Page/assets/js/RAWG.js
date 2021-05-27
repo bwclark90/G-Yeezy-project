@@ -1,12 +1,25 @@
 // Global Variables/functions
-let appID = 415171
+let userLookup = JSON.parse(localStorage.getItem('userLookup')) || []
+let userLookupID = JSON.parse(localStorage.getItem('userLookupID')) || []
 // simple get function
 const getID = (ID) => document.getElementById(ID)
+
+// search button functionality
+const searchBtn = (btnID) => {
+  let gameFind = getID(btnID).value
+  localStorage.removeItem('userLookup')
+  userLookup = []
+  userLookup.push({ gameFind })
+  localStorage.setItem('userLookup', JSON.stringify(userLookup))
+  window.open('../results folder/results.html', '_self', false)
+  console.log(gameFind)
+}
+
 // display Modals functions
 const loopModals = (dataproperty, tag) => {
   getID(tag).innerHTML = ""
   for (let t = 0; t < dataproperty.length; t++) {
-    getID(tag).innerHTML += `<a class="waves-effect waves-light btn modal-trigger" href="#modal1" data-name="${dataproperty[t].name}" data-search="${dataproperty[t].slug}">${dataproperty[t].name}</a>`
+    getID(tag).innerHTML += `<a class="waves-effect waves-light btn modal-trigger pink accent-4" href="#modal1" data-name="${dataproperty[t].name}" data-search="${dataproperty[t].slug}">${dataproperty[t].name}</a>`
   }
 }
 const loopDisplay = (dataproperty, tag) => {
@@ -81,9 +94,9 @@ const steamInfo = (searchVal) => {
     .catch(err => console.error(err))
 }
 
-
 // BIG FAT API CALL
 const infoDump = (searchVal) => {
+  console.log('ping')
   // universal api reference made by the one true god, Quinton.
   // search rawg for info
   axios.get('https://cors-proxy-j.herokuapp.com/', {
@@ -112,7 +125,7 @@ const infoDump = (searchVal) => {
           } else {
             let trailer = res.data.results[0].data.max
             getID('trailerBox').innerHTML = `
-              <video class="materialboxed responsive-video" controls>
+              <video class="responsive-video" controls>
               <source src = "${trailer}" type = "video/mp4" alt="${data.name}_trailer">
               </video>
             `
@@ -134,10 +147,14 @@ const infoDump = (searchVal) => {
           loopDisplay(data.tags, 'tags')
           getID('Release').innerHTML = `${data.released}`
           getID('Rating').innerHTML = `${data.rating}/5`
+          if (data.esrb_rating===null) {
+            getID('ESRB').innerHTML = 'N/A'
+          } else {
           getID('ESRB').innerHTML = `${data.esrb_rating.name}`
-
+          }
           cheapsharkInfo(data.name)
           steamInfo(searchVal)
+          getID('mainBlock').classList.remove('blockstart')
         })
         .catch(err => console.error(err))
     })
@@ -169,13 +186,17 @@ const infoModal = (modalItem, Title) => {
       }
     })
     .catch(err => console.error(err))
-}
-
-infoDump(appID)
+  }
+  if (userLookupID.length > 0) {
+    infoDump(userLookupID[0].linkID)
+  }
+// listeners
+// modal init
 document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('.modal');
   var instances = M.Modal.init(elems);
 });
+// modal trigger
 document.addEventListener('click', event => {
   if (event.target.classList.contains('modal-trigger')) {
     let searchVal = event.target.getAttribute('data-search')
@@ -183,6 +204,7 @@ document.addEventListener('click', event => {
     infoModal(searchVal, searchName)
   }
 })
+// modal link
 document.addEventListener('click', event => {
   if (event.target.classList.contains('modalLink')) {
     let searchID = event.target.getAttribute('data-id')
@@ -190,11 +212,26 @@ document.addEventListener('click', event => {
     infoDump(searchID)
   }
 })
+// materialbox init
 document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('.materialboxed');
   var instances = M.Materialbox.init(elems);
 });
+// sidenav
 document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('.sidenav');
   var instances = M.Sidenav.init(elems);
 });
+// search buttons
+getID('submit').addEventListener('click', event =>{
+  event.preventDefault()
+  searchBtn('search')
+})
+getID('submiticon').addEventListener('click', event =>{
+  event.preventDefault()
+  searchBtn('search')
+})
+getID('submitM').addEventListener('click', event =>{
+  event.preventDefault()
+  searchBtn('mobileSearch')
+})
