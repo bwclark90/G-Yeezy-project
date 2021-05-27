@@ -8,6 +8,13 @@
   width: 100%;
 }
 
+/* content */
+
+.contentCont {
+  margin-top: 50px;
+  padding-bottom: 100px;
+}
+
 #copyright {
   text-align: center;
   vertical-align: middle;
@@ -48,6 +55,11 @@
 
 /* nav bar */
 
+
+.hidden {
+  display: none;
+}
+
 #nav-mobile {
   background-color: black;
   opacity: 70%;
@@ -55,9 +67,11 @@
 
 .nav-wrapper {
   background-color: rgb(66, 66, 66);
-  flex-wrap: wrap width:100%;
-  position: absolute;
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0;
+  height: 70px;
+  align-items: center;
 }
 
 .search input[type=text] {
@@ -82,8 +96,6 @@
   background: transparent;
 }
 
-/* background */
-
 html, body {
   height: 100%;
 }
@@ -91,37 +103,4 @@ html, body {
 body {
   background: radial-gradient(ellipse at center, rgb(0, 0, 0) 0%, rgb(10, 145, 199) 35%, #630622 100%);
   /* overflow: hidden; */
-}
-
-.container {
-  width: 90%;
-  max-width: 1920px;
-}
-
-.card-panel {
-  opacity: 80%;
-  background-color: aqua;
-}
-
-.cardTitle {
-  font-size: 50px;
-  font-weight: bold;
-}
-
-#gameDesc {
-  font-size: 18px;
-}
-
-.modal {
-  background-color: rgb(179, 179, 179);
-}
-
-.ptxt {
-  font-size: small;
-}
-
-@media only screen and (max-width: 1000px) {
-  .cardTitle {
-    font-size: 30px;
-  }
 }

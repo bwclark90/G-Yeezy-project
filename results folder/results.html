@@ -14,26 +14,49 @@
 </head>
 
 <body>
-  <nav>
-    <div class="nav-wrapper">
-      <a href="#!" class="large material-icons" id="icon">videogame_asset</a>
-      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-      <ul class="right hide-on-med-and-down">
-        <li><a href="games.html">Games</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+  <div class="navbar-fixed">
+<nav>
+  <div class="nav-wrapper">
+    <a href="#!" class="large material-icons" id="icon">videogame_asset</a>
+    <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+      <li>
+        <div id="searchBar">
+          <form class="input-field">
+            <input id="search" type="search" placeholder=" Search Games" required>
+            <label class="label-icon" for="search"><i class="material-icons" id="submiticon">search</i></label>
+            <i class="material-icons">close</i>
+            <button class="hidden btn waves-effect waves-light" type="submit" name="action" id="submit">Submit
+              <i class="material-icons right">send</i>
+            </button>
+          </form>
+        </div>
+      </li>
+        <li><a href="results.html">Games</a></li>
+        <li><a href="../BronsonMay/miscpage.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+</div>
+
+<ul class="sidenav" id="mobile-demo">
+        <li><a href="results.html">Games</a></li>
+        <li><a href="../BronsonMay/miscpage.html">Contact</a></li>
+  <li>
+    <div id="mobile-search">
+      <form class="input-field">
+        <input id="mobileSearch" type="search" placeholder=" Search Games" required>
+        <label class="label-icon" for="search"><i class="mobile-search"></i></label>
+        <i class="material-icons">close</i>
+        <button class="btn waves-effect waves-light" type="submit" name="action" id="submitM">Submit
+          <i class="material-icons right">send</i>
+        </button>
+      </form>
     </div>
-  </nav>
+</ul>
 
-  <ul class="sidenav" id="mobile-demo">
-    <li><a href="sass.html">Sass</a></li>
-    <li><a href="badges.html">Components</a></li>
-    <li><a href="collapsible.html">Javascript</a></li>
-    <li><a href="mobile.html">Mobile</a></li>
-  </ul>
 
-  <h1> </h1>
-  <div class="container">
+  <div class="container contentCont">
     <div class="row">
       <form>
         <div class="mb-3">
@@ -41,7 +64,6 @@
           <input type="search" class="form-control" id="title">
         </div>
         <button class="waves-effect waves-dark btn-large" id="searchGame" type="submit">Search</button>
-
       </form>
     </div>
     <div class="row" id="videoGames">
@@ -54,10 +76,8 @@
     <div class="container">
       <div class="footer-copyright">
         <div class="footer-container">
-         <p id="copyright"> © Designed by Wells, Bronson, Brandon, and Kyle</p>
-    </div>
-    
-        
+          <p id="copyright"> © Designed by Wells, Bronson, Brandon, and Kyle</p>
+        </div>
       </div>
     </div>
   </footer>
