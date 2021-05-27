@@ -35,7 +35,7 @@ const searchGame = (value) => {
 
           
 
-         <a href="#" class ="addFinal">Get data</a>
+         <a href="#" class ="addFinal" data-id="${videoGame.id}">Get data</a>
 
         </div>
         </div>

@@ -191,21 +191,6 @@ body {
 }
 
 .horizontal-scroll-wrapper {
-  ... transform: rotate(-90deg);
-  transform-origin: right top;
-}
-
-.horizontal-scroll-wrapper>div {
-  ... transform: rotate(90deg);
-  transform-origin: right top;
-}
-
-.horizontal-scroll-wrapper {
-  ... transform: rotate(-90deg) translateY(-100px);
-  ...
-}
-
-.horizontal-scroll-wrapper {
   z-index: -1;
   position: absolute;
   display: block;
@@ -213,17 +198,10 @@ body {
   left: 0;
   width: 100%;
   margin: 0;
-  padding-top: $scrollBarHeight;
+  padding-top: scrollBarHeight;
   background: transparent;
   overflow-y: auto;
   overflow-x: hidden;
-  &>div {
-    display: block;
-    padding: 800px;
-    /* background: #cab; */
-    transform: rotate(90deg);
-    transform-origin: right top;
-  }
 }
 
 .ocean {
