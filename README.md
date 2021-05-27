@@ -1,5 +1,8 @@
 # G-Yeezy
 
+
+
+
 ___Summary:___
 G-Yeezy is a gaming application that allows users to search for their favorite games and have any/all information they might need. The developers have included multiple API sources to compile the best and most relevant data for each game. The information includes: summary of the game, best price, player count, release date, platforms, ESRB, rating and more. The application is easily navigable with amazing front end UI and beautiful CSS on each page. The developers included inspirational quotes from Kanye himself and gifs to entertain the user while they think of their next video game to research.    
 

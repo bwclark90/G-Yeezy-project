@@ -32,7 +32,11 @@ const searchGame = (value) => {
           <p>Community Rating: ${videoGame.rating}/5</p>
         </div>
         <div class="card-action">
-          <a class ="addFinal" data-id="${videoGame.id}">link to more information</a>
+
+          
+
+          <a class ="addFinal" data-id="${videoGame.id}">Get data</a>
+
         </div>
         </div>
         `
