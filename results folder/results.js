@@ -35,7 +35,7 @@ const searchGame = (value) => {
 
           
 
-         <a href="#" class ="addFinal">link to main search page</a>
+         <a href="#" class ="addFinal">Get data</a>
 
         </div>
         </div>
