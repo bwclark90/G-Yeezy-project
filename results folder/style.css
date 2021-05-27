@@ -1,11 +1,20 @@
 /* footer */
 
 .page-footer {
+
   height: 50px;
+
   background-color: rgb(66, 66, 66);
   bottom: 0;
   position: fixed;
   width: 100%;
+}
+
+/* content */
+
+.contentCont {
+  margin-top: 50px;
+  padding-bottom: 100px;
 }
 
 #copyright {
@@ -48,6 +57,47 @@
 
 /* nav bar */
 
+.hidden {
+  display: none;
+}
+
+@media only screen and (max-width: 1100px) {
+  #website {
+    font-size: 18px;
+  }
+  #searchBar {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #website {
+    font-size: 16px;
+  }
+}
+
+@media only screen and (max-width: 300px) {
+  #website {
+    display: none;
+  }
+}
+
+#icon {
+  font-size: 50px;
+  margin-left: 20px;
+}
+
+#website {
+  font-family: 'Rock Salt', cursive;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  padding-top: 0;
+  padding-bottom: 30px;
+  /* margin-bottom: 0; */
+  padding-bottom: 0;
+}
+
 #nav-mobile {
   background-color: black;
   opacity: 70%;
@@ -55,9 +105,11 @@
 
 .nav-wrapper {
   background-color: rgb(66, 66, 66);
-  flex-wrap: wrap width:100%;
-  position: absolute;
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0;
+  height: 70px;
+  align-items: center;
 }
 
 .search input[type=text] {
@@ -80,9 +132,8 @@
   padding-left: 4rem;
   width: calc(100% - 4rem);
   background: transparent;
+  color: white;
 }
-
-/* background */
 
 html, body {
   height: 100%;
@@ -91,6 +142,7 @@ html, body {
 body {
   background: radial-gradient(ellipse at center, rgb(0, 0, 0) 0%, rgb(10, 145, 199) 35%, #630622 100%);
   /* overflow: hidden; */
+
 }
 
 .container {
@@ -220,4 +272,5 @@ body {
   50% {
     transform: translate3d(0, 5px, 0);
   }
+
 }
