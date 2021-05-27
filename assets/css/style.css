@@ -1,154 +1,152 @@
 .hidden {
   display: none;
-
-#website {
-  font-family: 'Rock Salt', cursive;
-  text-align: center;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  width: 100%;
-  padding-top: 0;
-  padding-bottom: 30px;
-  margin-bottom: 0;
-  padding-bottom: 0;
 }
-
-body {
-  background: #111;
-}
-
-.horizontal-scroll-wrapper {
-  width: 100px;
-  height: 300px;
-  position: absolute;
-  display: block;
-  bottom: 0px;
-  left: 0;
-  width: 100%;
-  margin: 0;
-  padding-top: scrollBarHeight;
-  background: transparent;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-#kanyeQuote {
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 13px;
-  background: rgb(0, 162, 255);
-  padding: 20px;
-  width: 100%;
-  font-weight: 500;
-  -webkit-border-radius: 13px;
-  -moz-border-radius: 13px;
-  -ms-border-radius: 13px;
-  -o-border-radius: 13px;
-}
-
-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 40%;
-  box-sizing: border-box;
-  border-style: ridge;
-  border-color: rgb(255, 254, 254);
-}
-
-#nav-mobile {
-  background-color: black;
-  opacity: 70%;
-}
-
-.nav-wrapper {
-  background-color: rgb(66, 66, 66);
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 0;
-  height: 70px;
-  align-items: center;
-}
-
-.search input[type=text] {
-  padding: 6px;
-  border: none;
-  margin-top: 2px;
-  margin-right: 16px;
-  font-size: 17px;
-}
-
-.search {
-  float: right;
-  margin: 7px;
-  position: initial;
-  align-content: center;
-}
-
-.nav-wrapper .input-field input[type=search] {
-  height: initial;
-  padding-left: 4rem;
-  width: calc(100% - 4rem);
-  background: transparent;
-}
-
-html, body {
-  height: 100%;
-}
-
-body {
-  background: radial-gradient(ellipse at center, rgb(0, 0, 0) 0%, rgb(10, 145, 199) 35%, #630622 100%);
-  /* overflow: hidden; */
-}
-
-.ocean {
-  height: 5%;
-  width: 1000px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  background: #015871;
-  /* overflow-x: hidden; */
-  /* overflow-y: hidden; */
-}
-
-.wave {
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
-  position: absolute;
-  top: -198px;
-  width: 6400px;
-  height: 198px;
-  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
-  transform: translate3d(0, 0, 0);
-  -webkit-animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
-  overflow-x: hidden;
-  overflow-y: hidden;
-}
-
-.wave:nth-of-type(2) {
-  top: -175px;
-  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
-  opacity: 1;
-}
-
-@keyframes wave {
-  0% {
-    margin-left: 0;
+  #website {
+    font-family: 'Rock Salt', cursive;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    padding-top: 0;
+    padding-bottom: 30px;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
-  100% {
-    margin-left: -1600px;
+  body {
+    background: #111;
   }
-}
-
-@keyframes swell {
-  0%, 100% {
-    transform: translate3d(0, -25px, 0);
+  .horizontal-scroll-wrapper {
+    width: 100px;
+    height: 300px;
+    position: absolute;
+    display: block;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    padding-top: scrollBarHeight;
+    background: transparent;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
-  50% {
-    transform: translate3d(0, 5px, 0);
+  #kanyeQuote {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 13px;
+    background: rgb(0, 162, 255);
+    padding: 20px;
+    width: 100%;
+    font-weight: 500;
+    -webkit-border-radius: 13px;
+    -moz-border-radius: 13px;
+    -ms-border-radius: 13px;
+    -o-border-radius: 13px;
   }
-}
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 40%;
+    box-sizing: border-box;
+    border-style: ridge;
+    border-color: rgb(255, 254, 254);
+  }
+  #nav-mobile {
+    background-color: black;
+    opacity: 70%;
+  }
+  .nav-wrapper {
+    background-color: rgb(66, 66, 66);
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 0;
+    height: 70px;
+    align-items: center;
+  }
+  .search input[type=text] {
+    padding: 6px;
+    border: none;
+    margin-top: 2px;
+    margin-right: 16px;
+    font-size: 17px;
+  }
+  .search {
+    float: right;
+    margin: 7px;
+    position: initial;
+    align-content: center;
+  }
+  .nav-wrapper .input-field input[type=search] {
+    height: initial;
+    padding-left: 4rem;
+    width: calc(100% - 4rem);
+    background: transparent;
+  }
+  html, body {
+    height: 100%;
+  }
+  body {
+    background: radial-gradient(ellipse at center, rgb(0, 0, 0) 0%, rgb(10, 145, 199) 35%, #630622 100%);
+    /* overflow: hidden; */
+  }
+  .ocean {
+    height: 5%;
+    width: 1000px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: #015871;
+    /* overflow-x: hidden; */
+    /* overflow-y: hidden; */
+  }
+  .wave {
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
+    position: absolute;
+    top: -198px;
+    width: 6400px;
+    height: 198px;
+    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+    transform: translate3d(0, 0, 0);
+    -webkit-animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+    overflow-x: hidden;
+    overflow-y: hidden;
+  }
+  .wave:nth-of-type(2) {
+    top: -175px;
+    animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+    opacity: 1;
+  }
+  @keyframes wave {
+    0% {
+      margin-left: 0;
+    }
+    100% {
+      margin-left: -1600px;
+    }
+  }
+  @keyframes swell {
+    0%, 100% {
+      transform: translate3d(0, -25px, 0);
+    }
+    50% {
+      transform: translate3d(0, 5px, 0);
+    }
+  }
+  /* FOOTER STUFF */
+  .page-footer {
+    height: 70px;
+    background-color: rgb(66, 66, 66);
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    text-indent: 97px;
+    line-height: 0px;
+  }
+  .container1 {
+    width: 90%;
+    max-width: 1920px;
+  }
