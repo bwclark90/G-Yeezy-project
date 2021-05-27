@@ -1,3 +1,53 @@
+.horizontal-scroll-wrapper {
+  width: 100px;
+  height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.horizontal-scroll-wrapper {
+  ... transform: rotate(-90deg);
+  transform-origin: right top;
+}
+
+.horizontal-scroll-wrapper>div {
+  ... transform: rotate(90deg);
+  transform-origin: right top;
+}
+
+.horizontal-scroll-wrapper {
+  ... transform: rotate(-90deg) translateY(-100px);
+  ...
+}
+
+body {
+  background: #111;
+}
+
+div {
+  box-sizing: border-box;
+}
+
+.horizontal-scroll-wrapper {
+  position: absolute;
+  display: block;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding-top: $scrollBarHeight;
+  background: transparent;
+  overflow-y: auto;
+  overflow-x: hidden;
+  &>div {
+    display: block;
+    padding: 800px;
+    /* background: #cab; */
+    transform: rotate(90deg);
+    transform-origin: right top;
+  }
+}
+
 #kanyeQuote {
   text-align: center;
   display: flex;
@@ -22,10 +72,6 @@ img {
   box-sizing: border-box;
   border-style: ridge;
   border-color: rgb(255, 254, 254);
-}
-
-body {
-  background-color: grey;
 }
 
 #nav-mobile {
@@ -64,19 +110,19 @@ body {
   background: transparent;
 }
 
-// best seen at 1500px or less
 html, body {
   height: 100%;
 }
 
 body {
   background: radial-gradient(ellipse at center, rgb(0, 0, 0) 0%, rgb(10, 145, 199) 35%, #630622 100%);
-  overflow: hidden;
+  /* overflow: hidden; */
+  overflow-x: hidden;
 }
 
 .ocean {
   height: 5%;
-  width: 100%;
+  width: 1000px;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -91,6 +137,9 @@ body {
   height: 198px;
   animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
   transform: translate3d(0, 0, 0);
+  -webkit-animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .wave:nth-of-type(2) {
