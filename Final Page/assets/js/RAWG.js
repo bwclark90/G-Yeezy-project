@@ -1,5 +1,5 @@
 // Global Variables/functions
-let appID = 654
+let appID = 415171
 // simple get function
 const getID = (ID) => document.getElementById(ID)
 // display Modals functions
@@ -58,7 +58,6 @@ const steamInfo = (searchVal) => {
               let playerCount = respon.data
               let playerNum = playerCount.response.player_count
                 playerNum = playerNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
-              console.log(playerCount)
               getID('steamLink').innerHTML =`
               <a class="waves-effect waves-dark btn indigo darken-2" href="${url}" target="_blank">Go to Steam</a>
               `
@@ -68,6 +67,7 @@ const steamInfo = (searchVal) => {
             })
             .catch(err => console.error(err))
         }
+      }
         if (steamId === 0) {
           getID('playerCount').innerHTML = `
           Unfortunately, Not a Steam game
@@ -77,7 +77,6 @@ const steamInfo = (searchVal) => {
           target="_blank">Go to Steam</a>
           `
         }
-      }
     })
     .catch(err => console.error(err))
 }
@@ -194,4 +193,8 @@ document.addEventListener('click', event => {
 document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('.materialboxed');
   var instances = M.Materialbox.init(elems);
+});
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('.sidenav');
+  var instances = M.Sidenav.init(elems);
 });

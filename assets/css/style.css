@@ -35,9 +35,11 @@ body {
 
 .nav-wrapper {
   background-color: rgb(66, 66, 66);
-  flex-wrap: wrap width:100%;
-  position: absolute;
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0;
+  height: 70px;
+  align-items: center;
 }
 
 .search input[type=text] {
@@ -69,7 +71,7 @@ html, body {
 
 body {
   background: radial-gradient(ellipse at center, rgb(0, 0, 0) 0%, rgb(10, 145, 199) 35%, #630622 100%);
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .ocean {
@@ -79,6 +81,8 @@ body {
   bottom: 0;
   left: 0;
   background: #015871;
+  /* overflow-x: hidden; */
+  /* overflow-y: hidden; */
 }
 
 .wave {
