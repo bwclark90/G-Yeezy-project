@@ -35,9 +35,11 @@ body {
 
 .nav-wrapper {
   background-color: rgb(66, 66, 66);
-  flex-wrap: wrap width:100%;
-  position: absolute;
-  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0;
+  height: 70px;
+  align-items: center;
 }
 
 .search input[type=text] {
