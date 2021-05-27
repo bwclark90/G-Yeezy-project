@@ -1,7 +1,7 @@
 /* footer */
 
 .page-footer {
-  height: 100px;
+  height: 70px;
   background-color: rgb(66, 66, 66);
   bottom: 0;
   position: fixed;
@@ -54,10 +54,22 @@
 }
 
 /* nav bar */
-
-
 .hidden {
   display: none;
+} 
+
+#website {
+  font-family: 'Rock Salt', cursive;
+  text-align: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 30px;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 #nav-mobile {
