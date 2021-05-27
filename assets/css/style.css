@@ -1,3 +1,6 @@
+.hidden {
+  display: none;
+
 #website {
   font-family: 'Rock Salt', cursive;
   text-align: center;
@@ -12,54 +15,23 @@
   padding-bottom: 0;
 }
 
-.horizontal-scroll-wrapper {
-  width: 100px;
-  height: 300px;
-  overflow-y: auto;
-  overflow-x: hidden;
-}
-
-.horizontal-scroll-wrapper {
-  ... transform: rotate(-90deg);
-  transform-origin: right top;
-}
-
-.horizontal-scroll-wrapper>div {
-  ... transform: rotate(90deg);
-  transform-origin: right top;
-}
-
-.horizontal-scroll-wrapper {
-  ... transform: rotate(-90deg) translateY(-100px);
-  ...
-}
-
 body {
   background: #111;
 }
 
-div {
-  box-sizing: border-box;
-}
-
 .horizontal-scroll-wrapper {
+  width: 100px;
+  height: 300px;
   position: absolute;
   display: block;
   bottom: 0px;
   left: 0;
   width: 100%;
   margin: 0;
-  padding-top: $scrollBarHeight;
+  padding-top: scrollBarHeight;
   background: transparent;
   overflow-y: auto;
   overflow-x: hidden;
-  &>div {
-    display: block;
-    padding: 800px;
-    /* background: #cab; */
-    transform: rotate(90deg);
-    transform-origin: right top;
-  }
 }
 
 #kanyeQuote {
