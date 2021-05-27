@@ -3,7 +3,7 @@ let videoGames = []
 
 document.getElementById('searchGame').addEventListener('click', event => {
   event.preventDefault()
-console.log('ping')
+  console.log('ping')
 
 
   axios.get('https://cors-proxy-j.herokuapp.com/', {
@@ -18,7 +18,7 @@ console.log('ping')
     .then(resp => {
       let videoGames = resp.data.results
       console.log(videoGames)
-
+      document.getElementById('videoGames').innerHTML = ''
       videoGames.forEach(videoGame => {
         let gameElem = document.createElement('div')
         gameElem.className = 'col-s12 m4'
@@ -28,10 +28,10 @@ console.log('ping')
         
           <img src="${videoGame.background_image}" alt = "${videoGame.slug}">
           
-          <span class="card-title">${videoGame.slug}</span>
+          <span class="card-title">${videoGame.name}</span>
         </div>
         <div class="card-content">
-        <p>${videoGame.slug}
+        <p>${videoGame.name}
           <p>Released: ${videoGame.released}</p>
           <p>Community Rating: ${videoGame.rating}/5</p>
         </div>
@@ -39,13 +39,12 @@ console.log('ping')
           <a href="#" class ="addFinal">link to main search page</a>
         </div>
         </div>
-  </div>
-  <br>`
+        `
         document.getElementById('videoGames').append(gameElem)
         
       })
       document.getElementById('title').value = ''
-
+      
     })
     .catch(err => console.error)
 })

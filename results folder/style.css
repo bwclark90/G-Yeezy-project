@@ -1,3 +1,19 @@
+/* footer */
+
+.page-footer {
+  height: 100px;
+  background-color: rgb(66, 66, 66);
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
+
+#copyright {
+  text-align: center;
+  vertical-align: middle;
+  display: table-cell;
+}
+
 .col.s12.s4 {
   position: absolute;
   left: 0px;
@@ -22,7 +38,7 @@
 }
 
 .card-action {
-  height: 100px;
+  height: 70px;
 }
 
 .card-image {
@@ -64,4 +80,48 @@
   padding-left: 4rem;
   width: calc(100% - 4rem);
   background: transparent;
+}
+
+/* background */
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: radial-gradient(ellipse at center, rgb(0, 0, 0) 0%, rgb(10, 145, 199) 35%, #630622 100%);
+  /* overflow: hidden; */
+}
+
+.container {
+  width: 90%;
+  max-width: 1920px;
+}
+
+.card-panel {
+  opacity: 80%;
+  background-color: aqua;
+}
+
+.cardTitle {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+#gameDesc {
+  font-size: 18px;
+}
+
+.modal {
+  background-color: rgb(179, 179, 179);
+}
+
+.ptxt {
+  font-size: small;
+}
+
+@media only screen and (max-width: 1000px) {
+  .cardTitle {
+    font-size: 30px;
+  }
 }

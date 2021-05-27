@@ -3,6 +3,14 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Document</title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   <style>
     body {
       font-family: Arial, Helvetica, sans-serif;
@@ -32,7 +40,7 @@
     }
 
     .about-section {
-      padding: 50px;
+      padding: 30px;
       text-align: center;
       background-color: #474e5d;
       color: white;
@@ -61,7 +69,7 @@
       color: white;
       background-color: #000;
       text-align: center;
-      cursor: ponter;
+      cursor: pointer;
       width: 100%;
     }
 
@@ -79,17 +87,76 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  #nav-mobile {
+  background-color: black;
+  opacity: 70%;
+}
+
+.nav-wrapper {
+  background-color: rgb(66, 66, 66);
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 0;
+  height: 70px;
+  align-items: center;
+}
+
+.search input[type=text] {
+  padding: 6px;
+  border: none;
+  margin-top: 2px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+
+.search {
+  float: right;
+  margin: 7px;
+  position: initial;
+  align-content: center;
+}
+
+.nav-wrapper .input-field input[type=search] {
+  height: initial;
+  padding-left: 4rem;
+  width: calc(100% - 4rem);
+  background: transparent;
 }
   </style>
 </head>
 
 <body>
 
+
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#!" class="large material-icons" id="icon">videogame_asset</a>
+      <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li>
+          <div id="searchBar">
+            <form class="input-field">
+              <input id="search" type="search" placeholder=" Search Games" required>
+              <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+              <i class="material-icons">close</i>
+            </form>
+          </div>
+        </li>
+        <li><a href="games.html">Games</a></li>
+        <li><a href="BronsonMay21/miscpage.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
   <div class="about-section">
     <h1>About Us</h1>
     <p>The people behind G-Yeezy.</p>
     <p>Developing Software for the future.</p>
   </div>
+
+  
 
     <div class="column">
       <div class="card">
@@ -98,8 +165,8 @@
           <h2>Wells Wu</h2>
           <p class="title">Bootcamper</p>
           <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-          <p>@example.com</p>
-          <p><button class="button">Contact</button></p>
+          <p>wells.wu4621@gmail.com</p>
+          <p><button onClick="parent.open('https://github.com/WellsWu4621')"class="button">GitHub</button></p>
         </div>
       </div>
     </div>
@@ -111,8 +178,8 @@
           <h2>Kyle Berman</h2>
           <p class="title">Bootcamper</p>
           <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-          <p>@example.com</p>
-          <p><button class="button">Contact</button></p>
+          <p>kyleberman92@gmail.com</p>
+          <p><button onClick="parent.open('https://github.com/kyle004')"class="button">GitHub</button></p>
         </div>
       </div>
     </div>
@@ -125,7 +192,7 @@
           <p class="title">Bootcamper</p>
           <p>Some text that describes me lorem ipsum ipsum lorem.</p>
           <p>@example.com</p>
-          <p><button class="button">Contact</button></p>
+          <p><button onClick="parent.open('https://github.com/bwclark90')" class="button">GitHub</button></p>
         </div>
       </div>
     </div>
@@ -137,13 +204,17 @@
           <h2>Bronson Perez</h2>
           <p class="title">Bootcamper</p>
           <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-          <p>@example.com</p>
-          <p><button class="button">Contact</button></p>
+          <p>bperez1081@gmail.com</p>
+          <p><button onClick="parent.open('https://github.com/bronsonsoda')" class="button">GitHub</button></p>
         </div>
       </div>
     </div>
   </div>
 
 </body>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="assets/js/script.js"></script>
 
 </html>
