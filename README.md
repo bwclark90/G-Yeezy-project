@@ -8,7 +8,7 @@ ___Contributors:___
 <li>Wells Wu</li>
 <li>Bronson Perez</li>
 <li>Kyle Berman</li>
-<li>Bronson Perez</li>
+<li>Brandon Clark</li>
 </ul>
 
 ___Technologies used:___
