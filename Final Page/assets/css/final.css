@@ -1,3 +1,8 @@
+.container {
+  width: 90%;
+  max-width: 1920px;
+}
+
 .card-panel {
   opacity: 80%;
   background-color: aqua;
@@ -8,9 +13,24 @@
   font-weight: bold;
 }
 
+.smalltitle {
+  font-weight: 200;
+}
+
 #gameDesc {
   font-size: 18px;
 }
+
 .modal {
   background-color: darkgray;
+}
+
+.ptxt {
+  font-size: small;
+}
+
+@media only screen and (max-width: 1000px) {
+  .cardTitle {
+    font-size: 30px;
+  }
 }

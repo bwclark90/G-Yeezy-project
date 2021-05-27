@@ -59,11 +59,39 @@
         
         .catch(err => console.error(err))
         
-      })
+      }
       
-      .catch(err => console.error(err))
     })
-  
+    .catch(err => console.error(err))
+  })
+  let steamId = 0           
+  const steamIdCheck = (gameID) =>{
+    axios.get('https://cors-proxy-j.herokuapp.com/', {
+        headers: {
+          // url
+          'Target-URL': `https://api.rawg.io/api/games/${gameID}/stores?key=2c28abeb9697423fbf38597eb19afcd2`
+          ,
+          'Authorization': ''
+        }
+      })
+        .then(respon =>{
+          let storeID = respon.data.results
+          for (let s = 0; s < storeID.length; s++) {
+            if (storeID[s].store_id ===1) {
+              let url = storeID[3].url
+               let matches = url.match(/(\d+)/)
+               let steamId = matches[0]
+               console.log(steamId)
+
+              }
+          }
+
+        })
+        .catch(err => console.error(err))
+      }
+      steamIdCheck(654)
+      console.log(steamId)
+      
   </script>
 </body>
 

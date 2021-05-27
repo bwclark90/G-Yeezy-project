@@ -1,64 +1,144 @@
 // Global Variables/functions
-let appID = 10340
+let appID = 654
+// simple get function
 const getID = (ID) => document.getElementById(ID)
 // display Modals functions
-const loopDisplay = (dataproperty, tag) => {
+const loopModals = (dataproperty, tag) => {
+  getID(tag).innerHTML = ""
   for (let t = 0; t < dataproperty.length; t++) {
     getID(tag).innerHTML += `<a class="waves-effect waves-light btn modal-trigger" href="#modal1" data-name="${dataproperty[t].name}" data-search="${dataproperty[t].slug}">${dataproperty[t].name}</a>`
-    // if (t < dataproperty.length - 1) document.getElementById(tag).innerHTML += ', '
   }
 }
+const loopDisplay = (dataproperty, tag) => {
+  getID(tag).innerHTML = ""
+  for (let t = 0; t < dataproperty.length; t++) {
+    getID(tag).innerHTML += `${dataproperty[t].name}`
+    if (t < dataproperty.length - 1) getID(tag).innerHTML += ', '
+  }
+}
+
+// Cheapshark
+const cheapsharkInfo = (searchName) => {
+  axios.get(`https://www.cheapshark.com/api/1.0/games?title=${searchName}&exact=0`)
+    .then(resp => {
+      let price = resp.data
+      console.log(price.length)
+      if (price.length > 0) {
+        getID('cheapest').innerHTML = `Cheapest Price: $${price[0].cheapest} USD`
+        getID('cheapLink').innerHTML = `<a class="waves-effect waves-dark btn green lighten-1" target="_blank" href="https://www.cheapshark.com/redirect?dealID=${price[0].cheapestDealID}">Go to Store</a>`        
+      }else {
+        getID('cheapest').innerHTML = `Cheapest Price: N/A`
+        getID('cheapLink').innerHTML = `<a class="waves-effect waves-dark btn green lighten-1" target="_blank" href="https://myanimelist.net/anime/18507/Free">Free?</a>`
+      }
+    })
+    .catch(err => console.error(err))
+}
+
+// steam api query
+const steamInfo = (searchVal) => {
+  axios.get('https://cors-proxy-j.herokuapp.com/', {
+    headers: {
+      // url
+      'Target-URL': `https://api.rawg.io/api/games/${searchVal}/stores?key=2c28abeb9697423fbf38597eb19afcd2`
+      ,
+      'Authorization': ''
+    }
+  })
+    .then(respo => {
+      let storeID = respo.data.results
+      let steamId = 0
+      console.log(storeID)
+      for (let s = 0; s < storeID.length; s++) {
+        if (storeID[s].store_id === 1) {
+          let url = storeID[s].url
+          let matches = url.match(/(\d+)/)
+          steamId = matches[0]
+          axios.get(`https://desolate-thicket-86814.herokuapp.com/games/${steamId}`)
+            .then(respon => {
+              let playerCount = respon.data
+              let playerNum = playerCount.response.player_count
+                playerNum = playerNum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+              console.log(playerCount)
+              getID('steamLink').innerHTML =`
+              <a class="waves-effect waves-dark btn indigo darken-2" href="${url}" target="_blank">Go to Steam</a>
+              `
+              getID('playerCount').innerHTML = `
+              Current Player Count: ${playerNum}
+              `
+            })
+            .catch(err => console.error(err))
+        }
+        if (steamId === 0) {
+          getID('playerCount').innerHTML = `
+          Unfortunately, Not a Steam game
+          `
+          getID('steamLink').innerHTML = `
+          <a class="waves-effect waves-dark btn indigo darken-2" href="https://store.steampowered.com/"
+          target="_blank">Go to Steam</a>
+          `
+        }
+      }
+    })
+    .catch(err => console.error(err))
+}
+
 
 // BIG FAT API CALL
 const infoDump = (searchVal) => {
   // universal api reference made by the one true god, Quinton.
+  // search rawg for info
   axios.get('https://cors-proxy-j.herokuapp.com/', {
     headers: {
       // url
       'Target-URL': `https://api.rawg.io/api/games/${searchVal}?key=2c28abeb9697423fbf38597eb19afcd2`
-      // 'Target-URL': `https://api.rawg.io/api/games/${appID}/movies?key=2c28abeb9697423fbf38597eb19afcd2`
-      // 'Target-URL': "https://api.rawg.io/api/games?key=2c28abeb9697423fbf38597eb19afcd2&search=bioshock"
       ,
-      'Authorization': 'Bearer lbogapYHxff9h2fSNoWEoM420b8mRfQ4JBsiphR6BtaNKlmR51XQt3wCm2ocKhlkvpnv_46BvAcMuB_cTrv7pmRtuMMplxzaBAA_nAU57ttpRZlv9y05lvxWcXUoX3Yx'
+      'Authorization': ''
     }
   })
     .then(({ data }) => {
       console.log(data)
+      // search rawg for trailers
       axios.get('https://cors-proxy-j.herokuapp.com/', {
         headers: {
           'Target-URL': `https://api.rawg.io/api/games/${searchVal}/movies?key=2c28abeb9697423fbf38597eb19afcd2`
           ,
-          'Authorization': 'Bearer lbogapYHxff9h2fSNoWEoM420b8mRfQ4JBsiphR6BtaNKlmR51XQt3wCm2ocKhlkvpnv_46BvAcMuB_cTrv7pmRtuMMplxzaBAA_nAU57ttpRZlv9y05lvxWcXUoX3Yx'
+          'Authorization': ''
         }
       })
-        .then(resp => {
+        .then(res => {
           // display information
-          console.log(resp.data.count)
-          if (resp.data.count === 0) {
-            getID('trailerBox').innerHTML = `<img src="${data.background_image_additional}">`
+          console.log(res.data.count)
+          if (res.data.count === 0) {
+            getID('trailerBox').innerHTML = `<img src="${data.background_image_additional}" alt="${data.name}_backgroundadd">`
           } else {
-            let trailer = resp.data.results[0].data.max
+            let trailer = res.data.results[0].data.max
             getID('trailerBox').innerHTML = `
               <video class="materialboxed responsive-video" controls>
-              <source src = "${trailer}" type = "video/mp4" >
+              <source src = "${trailer}" type = "video/mp4" alt="${data.name}_trailer">
               </video>
             `
           }
           getID('cardHead').innerHTML = `
-          <img src="${data.background_image}">
-          <span class="card-panel card-title"><a href="${data.website}" class='black-text cardTitle'>${data.name}</a></span>
-            `
+          <img src="${data.background_image}" alt="${data.name}_background">
+            <span class="card-panel card-title">
+              <a href="${data.website}" class='black-text cardTitle'>${data.name}</a>
+            </span>
+          `
           getID('gameDesc').innerHTML = `${data.description}`
           loopDisplay(data.developers, 'Devs')
-          loopDisplay(data.genres, 'Genres')
+          loopModals(data.genres, 'Genres')
+          getID('platforms').innerHTML = ""
           for (let p = 0; p < data.platforms.length; p++) {
             getID('platforms').innerHTML += `${data.platforms[p].platform.name}`
             if (p < data.platforms.length - 1) getID('platforms').innerHTML += ', '
           }
-          for (let t = 0; t < data.tags.length; t++) {
-            getID('tags').innerHTML += `${data.tags[t].name}`
-            if (t < data.tags.length - 1) getID('tags').innerHTML += ', '
-          }
+          loopDisplay(data.tags, 'tags')
+          getID('Release').innerHTML = `${data.released}`
+          getID('Rating').innerHTML = `${data.rating}/5`
+          getID('ESRB').innerHTML = `${data.esrb_rating.name}`
+
+          cheapsharkInfo(data.name)
+          steamInfo(searchVal)
         })
         .catch(err => console.error(err))
     })
@@ -71,7 +151,7 @@ const infoModal = (modalItem, Title) => {
     headers: {
       'Target-URL': `https://api.rawg.io/api/games?key=2c28abeb9697423fbf38597eb19afcd2&genres=${modalItem}`
       ,
-      'Authorization': 'Bearer lbogapYHxff9h2fSNoWEoM420b8mRfQ4JBsiphR6BtaNKlmR51XQt3wCm2ocKhlkvpnv_46BvAcMuB_cTrv7pmRtuMMplxzaBAA_nAU57ttpRZlv9y05lvxWcXUoX3Yx'
+      'Authorization': ''
     }
   })
     .then(respo => {
@@ -111,3 +191,7 @@ document.addEventListener('click', event => {
     infoDump(searchID)
   }
 })
+document.addEventListener('DOMContentLoaded', function () {
+  var elems = document.querySelectorAll('.materialboxed');
+  var instances = M.Materialbox.init(elems);
+});
