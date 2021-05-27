@@ -11,10 +11,10 @@ axios.get(`https://api.giphy.com/v1/gifs/search?api_key=j6yOF05YP8AGwMifwqeDBZ1R
   .then(res => {
     let gifs = res.data.data
     console.log(gifs)
-    let random = Math.floor(Math.random() * 10)
+    let random = Math.floor(Math.random() * 20)
     console.log(random)
 
-    document.getElementById('kanyeGif').innerHTML = `<img src="${gifs[random].images.original.url}">`
+    document.getElementById('kanyeGif').innerHTML = `<img src="${gifs[random].images.fixed_width.url}">`
   })
   .catch(err => console.error(err))
 
@@ -22,3 +22,5 @@ document.addEventListener('DOMContentLoaded', function () {
   var elems = document.querySelectorAll('.sidenav');
   var instances = M.Sidenav.init(elems);
 });
+
+
