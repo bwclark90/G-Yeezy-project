@@ -36,7 +36,7 @@ document.getElementById('searchGame').addEventListener('click', event => {
           <p>Community Rating: ${videoGame.rating}/5</p>
         </div>
         <div class="card-action">
-          <a href="#" class ="addFinal">link to main search page</a>
+          <a href="#" class ="addFinal">Get info</a>
         </div>
         </div>
         `
