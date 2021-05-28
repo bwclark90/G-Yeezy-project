@@ -133,10 +133,10 @@ body {
 /* FOOTER STUFF */
 
 .page-footer {
-  height: 70px;
+  height: 80px;
   background-color: rgb(66, 66, 66);
   bottom: 0;
-  /* position: fixed; */
+  position: fixed;
   width: 100%;
   text-indent: 97px;
   line-height: 0px;
@@ -145,4 +145,98 @@ body {
 .container1 {
   width: 90%;
   max-width: 1920px;
+}
+
+.horizontal-scroll-wrapper {
+  width: 100px;
+  height: 300px;
+  /* bottom: -100px; */
+  top: 870px;
+  overflow-y: hidden;
+  overflow-x: hidden;
+}
+
+.horizontal-scroll-wrapper {
+  ... transform: rotate(-90deg);
+  transform-origin: right top;
+}
+
+.horizontal-scroll-wrapper>div {
+  ... transform: rotate(90deg);
+  transform-origin: right top;
+}
+
+.horizontal-scroll-wrapper {
+  ... transform: rotate(-90deg) translateY(-100px);
+  ...
+}
+
+.horizontal-scroll-wrapper {
+  z-index: -1;
+  position: absolute;
+  display: block;
+  bottom: 0px;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding-top: $scrollBarHeight;
+  background: transparent;
+  overflow-y: auto;
+  overflow-x: hidden;
+  &>div {
+    display: block;
+    padding: 800px;
+    /* background: #cab; */
+    transform: rotate(90deg);
+    transform-origin: right top;
+  }
+}
+
+.ocean {
+  height: 1%;
+  width: 1000px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: #015871;
+  /* overflow-x: hidden; */
+  /* overflow-y: hidden; */
+}
+
+.wave {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x;
+  position: absolute;
+  top: -198px;
+  width: 6400px;
+  height: 198px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+  -webkit-animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  z-index: -3;
+}
+
+.wave:nth-of-type(2) {
+  top: -175px;
+  animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 1;
+}
+
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
 }
